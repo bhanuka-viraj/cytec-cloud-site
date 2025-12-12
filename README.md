@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cytec Cloud (PVT) LTD - Corporate Website
 
-## Getting Started
+A modern, high-performance corporate website for **Cytec Cloud (PVT) LTD**, engineered with **Next.js 16** and **Tailwind CSS v4**. This project features a sleek, tech-forward design with dark mode support, sophisticated animations, and a fully static export capability.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+-   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Theme**: [Next Themes](https://github.com/pacocoursey/next-themes) (Dark/Light mode)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Modern UI/UX**: Glassmorphism, gradients, and a "cyber-physical" aesthetic.
+-   **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
+-   **Dark Mode**: First-class dark mode support with system preference detection.
+-   **Static Export**: Configured to generate a purely static site (HTML/CSS/JS) for server-less deployment.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Getting Started
 
-## Learn More
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view it.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Building for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is configured for **Static Export**.
 
-## Deploy on Vercel
+1.  **Build the Project**:
+    ```bash
+    npm run build
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2.  **Locate the Output**:
+    The static files will be generated in the `static` folder (renamed from `out` by our build script) or `out` folder by default.
+    -   *Note*: If you see an `out` folder, that is the standard Next.js export.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3.  **Deployment**:
+    Upload the contents of the `static` (or `out`) folder to any static hosting provider (e.g., AWS S3, GitHub Pages, Netlify, Vercel).
+
+## ⚠️ Important Note on Static Export
+
+To ensure the static export (HTML files) works correctly when opened directly from a file system (e.g., double-clicking `index.html`), we use `assetPrefix: "."`.
+
+-   **Images**: All images are imported relative to the app to ensure paths resolve correctly.
+-   **Routing**: Standard `<a>` tags are used for navigation anchors to work without client-side hydration issues in strict file-protocol environments.
+
+## 📁 Project Structure
+
+-   `app/`: Application routes and layouts.
+-   `components/`: Reusable UI components (Navbar, Footer, Hero, etc.).
+-   `assets/`: Static assets like images (moved here for relative imports).
+-   `public/`: Public static files (favicons, etc.).
